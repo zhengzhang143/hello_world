@@ -1,0 +1,154 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<project>
+  <actions/>
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties/>
+  <scm class="hudson.scm.SubversionSCM" plugin="subversion@2.7.1">
+    <locations>
+      <hudson.scm.SubversionSCM_-ModuleLocation>
+        <remote>svn://localhost/TEST4/src</remote>
+        <credentialsId>ca3ee6e7-11f9-463d-bbc4-62fae31b47ff</credentialsId>
+        <local>src</local>
+        <depthOption>infinity</depthOption>
+        <ignoreExternalsOption>true</ignoreExternalsOption>
+      </hudson.scm.SubversionSCM_-ModuleLocation>
+      <hudson.scm.SubversionSCM_-ModuleLocation>
+        <remote>svn://localhost/TEST4/qac</remote>
+        <credentialsId>ca3ee6e7-11f9-463d-bbc4-62fae31b47ff</credentialsId>
+        <local>qac</local>
+        <depthOption>infinity</depthOption>
+        <ignoreExternalsOption>true</ignoreExternalsOption>
+      </hudson.scm.SubversionSCM_-ModuleLocation>
+    </locations>
+    <excludedRegions></excludedRegions>
+    <includedRegions></includedRegions>
+    <excludedUsers></excludedUsers>
+    <excludedRevprop></excludedRevprop>
+    <excludedCommitMessages></excludedCommitMessages>
+    <workspaceUpdater class="hudson.scm.subversion.CheckoutUpdater"/>
+    <ignoreDirPropChanges>false</ignoreDirPropChanges>
+    <filterChangelog>false</filterChangelog>
+  </scm>
+  <assignedNode>master</assignedNode>
+  <canRoam>false</canRoam>
+  <disabled>false</disabled>
+  <blockBuildWhenDownstreamBuilding>false</blockBuildWhenDownstreamBuilding>
+  <blockBuildWhenUpstreamBuilding>false</blockBuildWhenUpstreamBuilding>
+  <triggers>
+    <hudson.triggers.TimerTrigger>
+      <spec>H 19 * * *</spec>
+    </hudson.triggers.TimerTrigger>
+    <hudson.triggers.SCMTrigger>
+      <spec>* * * * *</spec>
+      <ignorePostCommitHooks>false</ignorePostCommitHooks>
+    </hudson.triggers.SCMTrigger>
+  </triggers>
+  <concurrentBuild>false</concurrentBuild>
+  <builders>
+    <hudson.tasks.BatchFile>
+      <command>qac\batch\GenQACPrj.bat</command>
+    </hudson.tasks.BatchFile>
+  </builders>
+  <publishers>
+    <net.praqma.jenkins.plugin.prqa.notifier.PRQANotifier plugin="prqa-plugin@2.0.12">
+      <graphTypes>
+        <net.praqma.jenkins.plugin.prqa.graphs.ComplianceIndexGraphs>
+          <categories>
+            <net.praqma.prqa.status.StatusCategory>FileCompliance</net.praqma.prqa.status.StatusCategory>
+            <net.praqma.prqa.status.StatusCategory>ProjectCompliance</net.praqma.prqa.status.StatusCategory>
+          </categories>
+          <data serialization="custom">
+            <unserializable-parents/>
+            <list>
+              <default>
+                <size>0</size>
+              </default>
+              <int>0</int>
+            </list>
+            <net.praqma.prqa.PRQAStatusCollection>
+              <default>
+                <overrideMaximum class="enum-map" enum-type="net.praqma.prqa.status.StatusCategory"/>
+                <overrideMinimum class="enum-map" enum-type="net.praqma.prqa.status.StatusCategory"/>
+              </default>
+            </net.praqma.prqa.PRQAStatusCollection>
+          </data>
+          <title>Compliance Levels</title>
+          <type>Compliance</type>
+        </net.praqma.jenkins.plugin.prqa.graphs.ComplianceIndexGraphs>
+        <net.praqma.jenkins.plugin.prqa.graphs.MessagesGraph>
+          <categories>
+            <net.praqma.prqa.status.StatusCategory>Messages</net.praqma.prqa.status.StatusCategory>
+          </categories>
+          <data serialization="custom">
+            <unserializable-parents/>
+            <list>
+              <default>
+                <size>0</size>
+              </default>
+              <int>0</int>
+            </list>
+            <net.praqma.prqa.PRQAStatusCollection>
+              <default>
+                <overrideMaximum class="enum-map" enum-type="net.praqma.prqa.status.StatusCategory"/>
+                <overrideMinimum class="enum-map" enum-type="net.praqma.prqa.status.StatusCategory"/>
+              </default>
+            </net.praqma.prqa.PRQAStatusCollection>
+          </data>
+          <title>Number of messages</title>
+          <type>Compliance</type>
+        </net.praqma.jenkins.plugin.prqa.graphs.MessagesGraph>
+      </graphTypes>
+      <sourceQAFramework class="net.praqma.jenkins.plugin.prqa.notifier.PRQAReportPRQAToolSource">
+        <product>QAC812</product>
+        <performCrossModuleAnalysis>true</performCrossModuleAnalysis>
+        <enableDependencyMode>true</enableDependencyMode>
+        <enableDataFlowAnalysis>true</enableDataFlowAnalysis>
+        <fileProjectSource class="net.praqma.jenkins.plugin.prqa.notifier.PRQAReportProjectFileSource">
+          <projectFile>qac\TEST4_QAC.prj</projectFile>
+        </fileProjectSource>
+        <publishToQAV>true</publishToQAV>
+        <chosenServer>QAV2.0.1</chosenServer>
+        <codeUploadSetting>AllCode</codeUploadSetting>
+        <qaVerifyProjectName>TEST4_QAC -conf \&quot;qac\config\QAC-config.xml\&quot;</qaVerifyProjectName>
+        <vcsConfigXml></vcsConfigXml>
+        <sourceOrigin></sourceOrigin>
+        <singleSnapshotMode>true</singleSnapshotMode>
+      </sourceQAFramework>
+      <threshholdlevel>7</threshholdlevel>
+      <runWhenSuccess>false</runWhenSuccess>
+      <chosenReportTypes enum-type="net.praqma.prqa.PRQAContext$QARReportType">Compliance,CodeReview,Suppression</chosenReportTypes>
+    </net.praqma.jenkins.plugin.prqa.notifier.PRQANotifier>
+    <hudson.plugins.emailext.ExtendedEmailPublisher plugin="email-ext@2.52">
+      <recipientList>zheng.zhang1@hirain.com</recipientList>
+      <configuredTriggers>
+        <hudson.plugins.emailext.plugins.trigger.AlwaysTrigger>
+          <email>
+            <subject>$PROJECT_DEFAULT_SUBJECT</subject>
+            <body>$PROJECT_DEFAULT_CONTENT</body>
+            <recipientProviders>
+              <hudson.plugins.emailext.plugins.recipients.ListRecipientProvider/>
+            </recipientProviders>
+            <attachmentsPattern></attachmentsPattern>
+            <attachBuildLog>false</attachBuildLog>
+            <compressBuildLog>false</compressBuildLog>
+            <replyTo>$PROJECT_DEFAULT_REPLYTO</replyTo>
+            <contentType>project</contentType>
+          </email>
+        </hudson.plugins.emailext.plugins.trigger.AlwaysTrigger>
+      </configuredTriggers>
+      <contentType>default</contentType>
+      <defaultSubject>$DEFAULT_SUBJECT</defaultSubject>
+      <defaultContent>$DEFAULT_CONTENT</defaultContent>
+      <attachmentsPattern></attachmentsPattern>
+      <presendScript>$DEFAULT_PRESEND_SCRIPT</presendScript>
+      <postsendScript>$DEFAULT_POSTSEND_SCRIPT</postsendScript>
+      <attachBuildLog>false</attachBuildLog>
+      <compressBuildLog>false</compressBuildLog>
+      <replyTo>$DEFAULT_REPLYTO</replyTo>
+      <saveOutput>false</saveOutput>
+      <disabled>false</disabled>
+    </hudson.plugins.emailext.ExtendedEmailPublisher>
+  </publishers>
+  <buildWrappers/>
+</project>

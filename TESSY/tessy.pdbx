@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project
+    backup="$(PROJECTROOT)\tessy\backup"
+    configuration=""
+    database="$(PROJECTROOT)\tessy"
+    defaultEnvironment=""
+    description="test for what project is"
+    enableSourceRoot="true"
+    identifier="e53b24e7-3014-43ad-a783-4143a8123a4b"
+    location="$(PROJECTROOT)\tessy"
+    name="testproject1"
+    projectVersion="4"
+    tessyVersion="3.2.13"
+    isTemplate="false"/>
