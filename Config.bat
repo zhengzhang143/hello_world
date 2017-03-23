@@ -15,7 +15,7 @@ REM set GIT baseRepository of the Project Source Files
 set PRJSRCGIT=https://github.com/zhengzhang143/hello_world
 
 REM set GIT destination path
-set PRJSRCDESPATH=jenkins_%PRJNAME%
+set PRJDESBRANCH=jenkins_%PRJNAME%
 
 REM set GIT baseBranch of the Project Source Files
 set PRJSRCGITBRANCH=master

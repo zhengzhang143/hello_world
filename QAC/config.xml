@@ -5,20 +5,20 @@
   <keepDependencies>false</keepDependencies>
   <properties>
     <com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty plugin="gitlab-plugin@1.4.5">
-      <gitLabConnection>sssssss</gitLabConnection>
+      <gitLabConnection></gitLabConnection>
     </com.dabsquared.gitlabjenkins.connection.GitLabConnectionProperty>
   </properties>
   <scm class="hudson.plugins.git.GitSCM" plugin="git@3.0.4">
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>https://github.com/zhengzhang143/hello_world</url>
+        <url>PRJSRCGIT</url>
         <credentialsId>66f571de-82fe-470b-b016-de165abe49d8</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>*/master</name>
+        <name>*/branchname</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -109,7 +109,7 @@
         <publishToQAV>true</publishToQAV>
         <chosenServer>qav_cf_test</chosenServer>
         <codeUploadSetting>AllCode</codeUploadSetting>
-        <qaVerifyProjectName>TEST6_QAC -conf \&quot;qac\config\QAC-config.xml\&quot;</qaVerifyProjectName>
+        <qaVerifyProjectName>qavprjname</qaVerifyProjectName>
         <vcsConfigXml></vcsConfigXml>
         <sourceOrigin></sourceOrigin>
         <singleSnapshotMode>true</singleSnapshotMode>

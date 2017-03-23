@@ -55,6 +55,11 @@ tessycmd select-project %PROJECT%
 if NOT %ERRORLEVEL%==0 goto exit
 
 echo Selecting test collection
+REM download the code to be tested from the main repository into src
+set QACSRCPATH=%WORKSPACE%\SRC
+cd %QACSRCPATH%
+git pull origin master --allow-unrelated-histories
+
 tessycmd select-test-collection "Jenkins"
 if %ERRORLEVEL%==0 goto next2	
 	rem Create new test collection
