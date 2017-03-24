@@ -8,6 +8,6 @@ REM 2. Create QAC Job
 
 REM 3. specify new names for QAC config files
 copy %QACLOCALPATH%\person\m3cmex.p_a %QACLOCALPATH%\person\%QACJOBNAME%.p_a
-copy %QACLOCALPATH%\person\m3cmex.p_a %QACLOCALPATH%\person\%QACJOBNAME%.p_a
-copy %QACLOCALPATH%\person\m3cmex.p_a %QACLOCALPATH%\person\%QACJOBNAME%.p_a
-copy %QACLOCALPATH%\person\m3cmex.p_a %QACLOCALPATH%\person\%QACJOBNAME%.p_a
+copy %QACLOCALPATH%\person\m3cmex.p_c %QACLOCALPATH%\person\%QACJOBNAME%.p_c
+copy %QACLOCALPATH%\person\m3cmex.p_d %QACLOCALPATH%\person\%QACJOBNAME%.p_d
+copy %QACLOCALPATH%\person\m3cmex.p_s %QACLOCALPATH%\person\%QACJOBNAME%.p_s
