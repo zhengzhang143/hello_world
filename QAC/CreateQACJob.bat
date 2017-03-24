@@ -5,3 +5,9 @@ if %PRJSRCSUB% equ Y set PRJSRCSVN=%PRJSVNPATH%/src
 
 REM 2. Create QAC Job
 "%JENKINSJAVAPATH%" -jar "%JENKINSCLIPATH%" -s %JENKINSURL% create-job %QACJOBNAME% --username %JENKINSUSER% --password %JENKINSPASS% < "%QACLOCALPATH%\%QACJOBNAME%.xml"
+
+REM 3. specify new names for QAC config files
+copy %QACLOCALPATH%\person\m3cmex.p_a %QACLOCALPATH%\person\%QACJOBNAME%.p_a
+copy %QACLOCALPATH%\person\m3cmex.p_a %QACLOCALPATH%\person\%QACJOBNAME%.p_a
+copy %QACLOCALPATH%\person\m3cmex.p_a %QACLOCALPATH%\person\%QACJOBNAME%.p_a
+copy %QACLOCALPATH%\person\m3cmex.p_a %QACLOCALPATH%\person\%QACJOBNAME%.p_a
