@@ -1,4 +1,4 @@
-set SOURCEBRANCH=jenkins_TEST3
+set SOURCEBRANCH=jenkins_TEST4
 set QACSRCPATH=%WORKSPACE%\SRC
 set QACPRJPATH=%WORKSPACE%\qac\%JOB_BASE_NAME%.prj
 set QACPERSONPATH=%WORKSPACE%\qac\person
@@ -7,7 +7,7 @@ REM download the code to be tested from the main repository into src
 mkdir %QACSRCPATH%
 cd %QACSRCPATH%
 git init
-git pull origin master:%SOURCEBRANCH% --allow-unrelated-histories
+git pull https://github.com/zhengzhang143/hello_world master:%SOURCEBRANCH% --allow-unrelated-histories
 echo VersionTag45>"%QACPRJPATH%"
 echo ProjectDataflowFile=%QACPERSONPATH%\%JOB_BASE_NAME%.p_d>>"%QACPRJPATH%"
 echo StartProjectMarker>>"%QACPRJPATH%"
