@@ -12,13 +12,15 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
-        <url>PRJSRCGIT</url>
+        <name>origin</name>
+        <refspec>+refs/heads/master:refs/remotes/origin/master</refspec>
+        <url>https://github.com/zhengzhang143/hello_world</url>
         <credentialsId>66f571de-82fe-470b-b016-de165abe49d8</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
     </userRemoteConfigs>
     <branches>
       <hudson.plugins.git.BranchSpec>
-        <name>master</name>
+        <name>*/master</name>
       </hudson.plugins.git.BranchSpec>
     </branches>
     <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
@@ -100,7 +102,7 @@
         <enableDependencyMode>true</enableDependencyMode>
         <enableDataFlowAnalysis>true</enableDataFlowAnalysis>
         <fileProjectSource class="net.praqma.jenkins.plugin.prqa.notifier.PRQAReportProjectFileSource">
-          <projectFile>qac\TEST8_QAC.prj</projectFile>
+          <projectFile>qac\TEST11_QAC.prj</projectFile>
         </fileProjectSource>
         <publishToQAV>true</publishToQAV>
         <chosenServer>qav_cf_test</chosenServer>
