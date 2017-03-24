@@ -12,6 +12,7 @@
     <configVersion>2</configVersion>
     <userRemoteConfigs>
       <hudson.plugins.git.UserRemoteConfig>
+		<name>origin</name>
         <url>PRJSRCGIT</url>
         <credentialsId>66f571de-82fe-470b-b016-de165abe49d8</credentialsId>
       </hudson.plugins.git.UserRemoteConfig>
