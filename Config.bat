@@ -1,6 +1,6 @@
 REM 1. Should Be Setted Every Time
 REM Set Name of the Project
-set PRJNAME=TEST80
+set PRJNAME=TEST90
 
 REM Submit Settings Or Not : Y|N
 set PRJSUBMIT=Y

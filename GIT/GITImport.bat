@@ -6,9 +6,9 @@ if %PRJSUBMIT% equ Y (
 	set ROOTPATH=%cd%/..
 	cd %ROOTPATH%
 	git init 
-	git remote add origin %PRJSRCGIT%
+	REM git remote add origin %PRJSRCGIT%
 	git add .
 	git commit -m "added by jenkins script"
 	git branch %PRJDESBRANCH%
-	git push origin %PRJDESBRANCH% -f
+	git push %PRJSRCGIT% %PRJDESBRANCH% -f
 )
