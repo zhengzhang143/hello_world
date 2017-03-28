@@ -1,6 +1,6 @@
 REM 1. Should Be Setted Every Time
 REM Set Name of the Project
-set PRJNAME=TEST70
+set PRJNAME=TEST80
 
 REM Submit Settings Or Not : Y|N
 set PRJSUBMIT=Y
@@ -70,10 +70,10 @@ REM Set URL of Jenkins
 set JENKINSURL=http://localhost:8080/
 
 REM Set UserName of Jenkins
-set JENKINSUSER=zheng.zhang1
+set JENKINSUSER=zhengzhang143
 
 REM Set Password of Jenkins
-set JENKINSPASS=Aa04619910728
+set JENKINSPASS=a04619910728
 
 
 REM 3. Can Use The Default Settings
