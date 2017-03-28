@@ -1,6 +1,6 @@
 REM 1. Should Be Setted Every Time
 REM Set Name of the Project
-set PRJNAME=TEST60
+set PRJNAME=TEST70
 
 REM Submit Settings Or Not : Y|N
 set PRJSUBMIT=Y
@@ -61,7 +61,7 @@ set TESSYJOB=P
 
 REM 2. Should Be Setted According To The Local Machine
 REM Set Path of JAVA
-set JENKINSJAVAPATH=D:\jenkins\jre\bin\java
+set JENKINSJAVAPATH=D:\myjenkins\jre\bin\java
 
 REM Set Path of jenkins-cli.jar
 set JENKINSCLIPATH=%~dp0%jenkins-cli.jar
