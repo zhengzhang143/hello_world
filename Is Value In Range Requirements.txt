@@ -1,0 +1,4 @@
+RequirementText
+Is a value in a given range? The range is given by a start value and a range.
+The end of the range shall not be inside the range.
+If the length is 0, no value is inside the range.

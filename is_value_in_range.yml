@@ -1,0 +1,153 @@
+Tessy: {File Type: Import/Export, Version: 3.1.17}
+---
+General: {PDB File: 'E:\Projects\TESSY\GCC CDT\tessy\tessy.pdbx', Testobject: is_value_in_range, Tessy Version: 3.1.17, Project: GCC CDT,
+  Export Date: '2015-09-11', Module: Is value in range}
+---
+Properties:
+- - '1'
+  - '0'
+  - ''
+  - Simple
+  - The normal combinations using positive numbers for range and position. The normal combinations using positive numbers for range and position 2. The normal combinations using positive numbers for range and position 3. The normal combinations using positive numbers for range and position 4.
+  - |-
+    - Range Start:Positive
+    - Range Length:Positive
+    - Position:Inside
+      - Position in Range:Middle
+  - |-
+    This
+    is
+    ö
+    comment.
+- - '2'
+  - '0'
+  - ''
+  - ''
+  - ''
+  - |-
+    - Range Start:Positive
+    - Range Length:Positive
+    - Position:Outside
+      - Where ?:Above
+  - ''
+- - '3'
+  - '0'
+  - ''
+  - ''
+  - ''
+  - |-
+    - Range Start:Zero
+    - Range Length:Positive
+    - Position:Inside
+      - Position in Range:Upper Border
+  - ''
+- - '4'
+  - '0'
+  - ''
+  - ''
+  - ''
+  - |-
+    - Range Start:Negative
+    - Range Length:Positive
+    - Position:Inside
+      - Position in Range:Lower Border
+  - ''
+- - '5'
+  - '0'
+  - ''
+  - Length=0
+  - 'Special case: Length of range equals zero.'
+  - |-
+    - Range Start:Positive
+    - Range Length:Zero
+    - Position:Outside
+      - Where ?:Above
+  - ''
+- - '6'
+  - '0'
+  - ''
+  - ''
+  - ''
+  - |-
+    - Range Start:Zero
+    - Range Length:Zero
+    - Position:Outside
+      - Where ?:Below
+  - ''
+- - '7'
+  - '0'
+  - ''
+  - ''
+  - ''
+  - |-
+    - Range Start:Negative
+    - Range Length:Zero
+    - Position:Inside
+      - Position in Range:Middle
+  - ''
+- - '8'
+  - '0'
+  - ''
+  - Special
+  - More sophisticated tests.
+  - |-
+    - Range Start:Positive
+    - Range Length:Negative
+    - Position:Inside
+      - Position in Range:Middle
+  - ''
+- ['8', '1', '', Test Step 8.1, Description 8.1, Specification 8.1, Comment 8.1]
+- - '9'
+  - '0'
+  - ''
+  - ''
+  - ''
+  - |-
+    - Range Start:Negative
+    - Range Length:Negative
+    - Position:Inside
+      - Position in Range:Upper Border
+  - ''
+- - '10'
+  - '0'
+  - ''
+  - ''
+  - ''
+  - |-
+    - Range Start:Zero
+    - Range Length:Negative
+    - Position:Outside
+      - Where ?:Above
+  - ''
+- ['10', '1', '', Test Step 10.1, Description 10.1, Specification 10.1, '']
+---
+User Code:
+  Test Item List:
+  - ['0', '0', C-Code, Prolog, /* Testobject Prolog */]
+  - ['0', '0', C-Code, Epilog, /* Testobject Epilog */]
+  - ['1', '0', C-Code, Prolog, /* Testcase Prolog 1 */]
+  - ['1', '0', C-Code, Epilog, /* Testcase Epilog 1 */]
+  - ['1', '1', C-Code, Prolog, /* Teststep Prolog 1.1 */]
+  - ['1', '1', C-Code, Epilog, /* Teststep Epilog 1.1 */]
+  Declaration: |-
+    /*
+     * This is a declaration.
+     */
+  Definition: |-
+    /*
+     * This is a definition.
+     */
+---
+Values:
+- [r1.range_len, r1.range_start, v1, is_value_in_range()]
+- [i, i, i, o]
+- [tc1.1, '20', '10', '15', 'yes']
+- [tc2.1, '5', '3', '20', 'no']
+- [tc3.1, '5', '0', '5', 'yes']
+- [tc4.1, '10', '-13', '-12', 'yes']
+- [tc5.1, '0', '50', '60', 'no']
+- [tc6.1, '0', '0', '-1', 'no']
+- [tc7.1, '0', '-7', '-7', 'yes']
+- [tc8.1, '-50', '42', '20', 'yes']
+- [tc9.1, '-10', '-42', '-43', 'yes']
+- [tc10.1, '-20', '0', '1', 'no']
