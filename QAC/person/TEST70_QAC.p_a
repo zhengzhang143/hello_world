@@ -1,9 +1,0 @@
--sty exdented
--tab 8
--en ASC
--maxerr 0
--met+
--ppm-
--co a
--spragma "asm","endasm"
--spragma "ASM","ENDASM"

@@ -24,6 +24,10 @@ mkdir ..\backup
 mkdir ..\log
 mkdir ..\persist
 mkdir ..\work
+rem assign distinct Id and Name to tessy project
+set SEDLOCALPATH=..\..\SED
+%SEDLOCALPATH%\sed -r "s#identifier="identifier"#identifier="%JOB_BASE_NAME%_%BUILD_NUMBER%_%time%"#" "..\tessy.xml" | "%SEDLOCALPATH%\sed" -r "s#name="tessyprojectname"#name="%JOB_BASE_NAME%_%BUILD_NUMBER%_%time%"#" > "..\tessy.pdbx"
+rem start tessy
 tessyd -f %cd%\..\tessy.pdbx
 if %ERRORLEVEL%==0 goto next0
 	echo -- TESSY with GUI is running
@@ -54,12 +58,12 @@ echo Selecting %PROJECT%
 tessycmd select-project %PROJECT%
 if NOT %ERRORLEVEL%==0 goto exit
 
-echo Selecting test collection
-REM download the code to be tested from the main repository into src
+echo downloading the code to be tested from the main repository into src
 set QACSRCPATH=%WORKSPACE%\SRC
 cd %QACSRCPATH%
 git pull origin master --allow-unrelated-histories
 
+echo Selecting test collection
 tessycmd select-test-collection "Jenkins"
 if %ERRORLEVEL%==0 goto next2	
 	rem Create new test collection
