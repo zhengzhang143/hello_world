@@ -5,7 +5,6 @@ rem if %PRJSRCSUB% equ Y (svn import "%PRJSRCLOCAL%" "%PRJSRCSVN%" --message "im
 if %PRJSUBMIT% equ Y (
 	rem set ROOTPATH=%cd%/..
 	rem cd %ROOTPATH%
-	echo %cd%
 	git init 
 	REM git remote add origin %PRJSRCGIT%
 	git add .
