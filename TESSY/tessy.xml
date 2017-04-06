@@ -5,7 +5,7 @@
     database="$(PROJECTROOT)\tessy"
     defaultEnvironment=""
     description="tessy with jenkins"
-    enableSourceRoot="true"
+    enableSourceRoot="false"
     identifier="identifier"
     location="$(PROJECTROOT)\tessy"
     name="tessyprojectname"
