@@ -59,8 +59,9 @@ tessycmd select-project %PROJECT%
 if NOT %ERRORLEVEL%==0 goto exit
 
 echo downloading the code to be tested from the main repository into src
-set QACSRCPATH=%WORKSPACE%\SRC
-cd %QACSRCPATH%
+set TESSYSRCPATH=%WORKSPACE%\SRC
+mkdir %TESSYSRCPATH%
+cd %TESSYSRCPATH%
 git init
 git pull https://github.com/zhengzhang143/hello_world master:master --allow-unrelated-histories
 
