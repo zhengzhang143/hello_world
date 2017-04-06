@@ -35,5 +35,5 @@
     config.xml: TESSY Job模板
     tessy.bat: 调用tessy执行单元测试的批处理程序
     test_jenkins.tbs: tessy项目配置文件
-    testdata0.tmb: tessy测试用例数据
+    testdata0.tmb: tessy的测试用例
     
