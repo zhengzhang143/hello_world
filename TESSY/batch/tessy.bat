@@ -20,10 +20,10 @@ rem Starting TESSY headless if not already runningF
 rem -----------------------------------------------
 echo Starting TESSY (headless)
 rem create tessy project directories
-mkdir ..\backup 2^>nul
-mkdir ..\log 2^>nul
-mkdir ..\persist 2^>nul
-mkdir ..\work 2^>nul
+mkdir ..\backup 
+mkdir ..\log 
+mkdir ..\persist 
+mkdir ..\work 
 rem assign distinct Id and Name to tessy project
 set SEDLOCALPATH=..\..\SED
 %SEDLOCALPATH%\sed -r "s#identifier=\"identifier\"#identifier=\"%JOB_BASE_NAME%_%BUILD_NUMBER%_%time%\"#" "..\tessy.xml" | "%SEDLOCALPATH%\sed" -r "s#name=\"tessyprojectname\"#name=\"%JOB_BASE_NAME%_%BUILD_NUMBER%_%time%\"#" > "..\tessy.pdbx"
