@@ -1,4 +1,3 @@
-set SOURCEBRANCH=sourcebranch
 set QACSRCPATH=%WORKSPACE%\SRC
 set QACPRJPATH=%WORKSPACE%\qac\%JOB_BASE_NAME%.prj
 set QACPERSONPATH=%WORKSPACE%\qac\person
@@ -7,7 +6,7 @@ REM download the code to be tested from the main repository into src
 mkdir %QACSRCPATH%
 cd %QACSRCPATH%
 git init
-git pull origin master:%SOURCEBRANCH% --allow-unrelated-histories
+git pull origin master:sourcebranch --allow-unrelated-histories
 echo VersionTag45>"%QACPRJPATH%"
 echo ProjectDataflowFile=%QACPERSONPATH%\%JOB_BASE_NAME%.p_d>>"%QACPRJPATH%"
 echo StartProjectMarker>>"%QACPRJPATH%"

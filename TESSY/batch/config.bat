@@ -62,7 +62,7 @@ echo downloading the code to be tested from the main repository into src
 set QACSRCPATH=%WORKSPACE%\SRC
 cd %QACSRCPATH%
 git init
-git pull https://github.com/zhengzhang143/hello_world master:master --allow-unrelated-histories
+git pull origin master:sourcebranch --allow-unrelated-histories
 
 echo Selecting test collection
 tessycmd select-test-collection "Jenkins"

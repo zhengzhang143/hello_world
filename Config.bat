@@ -1,6 +1,6 @@
 REM 1. Should Be Setted Every Time
 REM Set Name of the Project
-set PRJNAME=validatetessy90
+set PRJNAME=validatetessy100
 
 REM Submit Settings Or Not : Y|N
 set PRJSUBMIT=Y
@@ -17,7 +17,7 @@ set PRJSRCGIT=https://github.com/zhengzhang143/hello_world
 REM set GIT destination path
 set PRJDESBRANCH=jenkins_%PRJNAME%
 
-REM set GIT baseBranch of the Project Source Files from which test code will be pulled.starts with a prefix of "*/"
+REM set GIT baseBranch of the Project Source Files from which test code will be pulled.
 set PRJSRCGITBRANCH=master
 
 REM Set SVN Path of the Project Source Files, Valid When %PRJSRCSUB% is N
