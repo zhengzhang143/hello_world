@@ -61,7 +61,7 @@ set TESSYJOB=P
 
 REM 2. Should Be Setted According To The Local Machine
 REM Set Path of JAVA
-set JENKINSJAVAPATH=D:\myjenkins\jre\bin\java
+set JENKINSJAVAPATH=C:\Program Files (x86)\Jenkins\jre\bin
 
 REM Set Path of jenkins-cli.jar
 set JENKINSCLIPATH=%~dp0%jenkins-cli.jar
@@ -70,10 +70,10 @@ REM Set URL of Jenkins
 set JENKINSURL=http://localhost:8080/
 
 REM Set UserName of Jenkins
-set JENKINSUSER=zhengzhang143
+set JENKINSUSER=admin
 
 REM Set Password of Jenkins
-set JENKINSPASS=a04619910728
+set JENKINSPASS=admin
 
 
 REM 3. Can Use The Default Settings
