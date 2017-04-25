@@ -4,14 +4,15 @@
 
 演示注意事项:
 1. Config.bat至少修改下项目名称，即PRJNAME；如果想接收到邮件，还需要修改收件人地址，即PRJRECIPIENTS
-2. 脚本执行过程中有用户交互，一路输入Y即可
+2. 脚本执行过程中会询问是否生成QAC工程，是否生成TESSY工程，是否上传配置到git。根据实际需要进行选择。
 2. 脚本成功后可登陆localhost:8080察看新建的Job：{PRJNAME}_QAC和{PRJNAME}_TESSY
-3. 两项Job成功创建1分钟后会执行自动构建，构建依赖下列：
+3. job新建成功后需要手动进行配置，修改结点名称为你的实际结点名称。
+4. 两项Job成功创建1分钟后会执行自动构建，构建依赖下列：
    a. 启动QAC License Tool：桌面快捷方式Launch rlm.exe
    b. 启动QAV Server：桌面快捷方式QA·Verify Server 2.0.1
    c. 启动Tessy License Tool：桌面快捷方式Floating License Manager，确保Server已启动（Server->Start Local Server为灰）
    d. 启动Tess节点：桌面快捷方式slave-agent.jnlp - 快捷方式
-4. 构建完毕后，会收到两封邮件：
+5. 构建完毕后，会收到两封邮件：
    a. QAC邮件中会给项目Url，打开后会看到PRQA View server location，即QA·Verify server的链接
    b. TESSY邮件中会以附件方式发送测试报告
 
